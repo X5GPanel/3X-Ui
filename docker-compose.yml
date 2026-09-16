@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  3x-ui:
+    build: .
+    container_name: 3x-ui
+    ports:
+      - "443:443"
+    volumes:
+      - db_data:/etc/x-ui/
+    restart: unless-stopped
+
+volumes:
+  db_data:
+
